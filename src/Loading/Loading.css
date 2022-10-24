@@ -1,0 +1,58 @@
+
+.Loading-container {
+    background-color: #7A69FD;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+}
+  
+.Loading-text {
+    color:  black;
+    margin: 24px 0 24px 24px;
+    width: calc(100% - 120px);
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+}
+  
+  .Loading-completeIcon,
+  .Loading-deleteIcon {
+    border-radius: 50px;
+    height: 30px;
+    width: 30px;
+  }
+  
+  .Loading-completeIcon {
+    position: absolute;
+    left: 12px;
+  }
+  
+  .Loading-deleteIcon {
+    position: absolute;
+    top: -4px;
+    right: 0;
+  }
+  
+  .Loading-container,
+  .Loading-completeIcon,
+  .Loading-deleteIcon {
+    background: linear-gradient(90deg, #7A69FD, #29225D);
+    background-size: 400% 400%;
+    animation: loadingAnimation 3s ease-in-out infinite;
+  }
+  
+  @keyframes loadingAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
