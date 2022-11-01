@@ -1,8 +1,6 @@
 import React from "react";
-import { TodoContext } from "../TodoContext";
 import './TodoForm.css';
-function TodoForm (){
-    const {addTodo , setOpenModal} = React.useContext(TodoContext); 
+function TodoForm ({addTodo , setOpenModal}){
     const [textArea , setTextArea] = React.useState('');
 
     const onCancel = () =>{
@@ -26,6 +24,7 @@ function TodoForm (){
                 value={textArea}
                 onChange = {onChange}
                 placeholder="llorar con la llorona..."
+                autoFocus
             />
             <div className="TodoForm-buttonContainer">
                 <button type="button" onClick={onCancel} className="TodoForm-button TodoForm-button--cancel">
