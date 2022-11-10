@@ -11,13 +11,6 @@ import { Error } from "../Error";
 import { Loading } from "../Loading";
 import { CreaUnTodo } from "../CreaUnTodo";
 import { TodoHeader } from "../TodoHeader"
-//import './App.css';
-// const defaultTodos = [
-//   {text:'cortar cebolla', completed: false},
-//   {text: 'Tomar un curso de react', completed: false},
-//   {text: 'Llorar con la llorona', completed: false}
-// ];
-
 
 function App() {
   const {
@@ -64,21 +57,6 @@ function App() {
         )}
       /> 
 
-      {/* <TodoList>
-        {error && <Error />}
-        {loading && <Loading />}
-        {(!loading && !searched.length) && <CreaUnTodo />}
-
-        {searched.map(todo => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onCompleted={() => completeTodos(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
-          />
-        ))}
-      </TodoList> */}
       {
         openModal && (
           <Modal>
