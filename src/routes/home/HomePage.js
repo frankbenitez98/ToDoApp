@@ -1,30 +1,33 @@
 import React from "react";
-import { TodoCounter } from "../TodoCounter";
-import { TodoSearch } from "../TodoSearch";
-import { TodoList } from "../TodoList";
-import { CreateTodoButton } from "../CreateTodoButton";
-import { TodoItem } from "../TodoItem";
-import { useTodo} from "./useTodo";
-import { Modal } from "../Modal";
-import { TodoForm } from "../TodoForm";
-import { Error } from "../Error";
-import { Loading } from "../Loading";
-import { CreaUnTodo } from "../CreaUnTodo";
-import { TodoHeader } from "../TodoHeader"
 
-function App() {
+import { useTodo} from "../useTodo";
+import { TodoCounter } from "../../ui/TodoCounter";
+import { TodoSearch } from "../../ui/TodoSearch";
+import { TodoList } from "../../ui/TodoList";
+import { CreateTodoButton } from "../../ui/CreateTodoButton";
+import { TodoItem } from "../../ui/TodoItem";
+import { Modal } from "../../ui/Modal";
+import { Error } from "../../ui/Error";
+import { Loading } from "../../ui/Loading";
+import { CreaUnTodo } from "../../ui/CreaUnTodo";
+import { TodoHeader } from "../../ui/TodoHeader"
+import { useNavigate } from "react-router-dom";
+
+function HomePage() {
+  const navigate = useNavigate(); 
+
   const {
     loading,
     error,
     searched,
     completeTodos,
     deleteTodo,
-    openModal,
-    setOpenModal,
+    //openModal,
+    //setOpenModal,
     totalTodos,
     completedTodos,
     setSearch,
-    addTodo
+    // addTodo
   } = useTodo();
 
   
@@ -50,16 +53,17 @@ function App() {
         onCreaUnTodo = { () => <CreaUnTodo />}
         render = { todo => (
           <TodoItem
-            key={todo.text}
+            key={todo.id}
             text={todo.text}
             completed={todo.completed}
-            onCompleted={() => completeTodos(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
+            onCompleted={() => completeTodos(todo.id)}
+            onDelete={() => deleteTodo(todo.id)}
+            onEdit = {() => navigate('/edit/' + todo.id, { state : {todo} })}
           />
         )}
       /> 
 
-      {
+      {/* {
         openModal && (
           <Modal>
             <TodoForm 
@@ -68,10 +72,11 @@ function App() {
             />
           </Modal>
         )
-      }
+      } */}
       <CreateTodoButton
-        openModal={openModal}
-        setOpenModal={setOpenModal}
+        // openModal={openModal}
+        // setOpenModal={setOpenModal}
+        onClick={()=>navigate('/new')}
       />
     </React.Fragment >
   );
@@ -79,4 +84,4 @@ function App() {
 }
 
 
-export default App;
+export {HomePage};
