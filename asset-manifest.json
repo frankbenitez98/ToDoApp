@@ -1,13 +1,16 @@
 {
-  "files": {
-    "main.css": "/ToDoApp/static/css/main.d13595f9.css",
-    "main.js": "/ToDoApp/static/js/main.c6e664c8.js",
-    "index.html": "/ToDoApp/index.html",
-    "main.d13595f9.css.map": "/ToDoApp/static/css/main.d13595f9.css.map",
-    "main.c6e664c8.js.map": "/ToDoApp/static/js/main.c6e664c8.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.d13595f9.css",
-    "static/js/main.c6e664c8.js"
-  ]
+  "main.css": "/TodoMachine-router/static/css/main.565baf35.chunk.css",
+  "main.js": "/TodoMachine-router/static/js/main.c4d3d9e3.chunk.js",
+  "main.js.map": "/TodoMachine-router/static/js/main.c4d3d9e3.chunk.js.map",
+  "static/js/1.c986d97c.chunk.js": "/TodoMachine-router/static/js/1.c986d97c.chunk.js",
+  "static/js/1.c986d97c.chunk.js.map": "/TodoMachine-router/static/js/1.c986d97c.chunk.js.map",
+  "runtime~main.js": "/TodoMachine-router/static/js/runtime~main.b44399d5.js",
+  "runtime~main.js.map": "/TodoMachine-router/static/js/runtime~main.b44399d5.js.map",
+  "static/media/check.6934f2a6.svg": "/TodoMachine-router/static/media/check.6934f2a6.svg",
+  "static/media/edit.0066693d.svg": "/TodoMachine-router/static/media/edit.0066693d.svg",
+  "static/media/delete.23870b9e.svg": "/TodoMachine-router/static/media/delete.23870b9e.svg",
+  "static/css/main.565baf35.chunk.css.map": "/TodoMachine-router/static/css/main.565baf35.chunk.css.map",
+  "index.html": "/TodoMachine-router/index.html",
+  "precache-manifest.031356aea0763bc3e462c798bd9e53a1.js": "/TodoMachine-router/precache-manifest.031356aea0763bc3e462c798bd9e53a1.js",
+  "service-worker.js": "/TodoMachine-router/service-worker.js"
 }
