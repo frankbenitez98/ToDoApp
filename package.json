@@ -1,5 +1,5 @@
 {
-  "name": "TodoMachine-router",
+  "name": "introduccion-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -41,5 +41,5 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   },
-  "homepage": "https://frankbenitez98.github.io/TodoMachine-router"
+  "homepage": "https://frankbenitez98.github.io/ToDoAppWithRouter"
 }
