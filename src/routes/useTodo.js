@@ -8,9 +8,9 @@ function useTodo() {
         saveItem: saveTodos,
         loading,
         error
-    } = useLocalStorage('TODOS_V1', []);
+    } = useLocalStorage('TODOS_V2', []);
 
-    const [openModal, setOpenModal] = React.useState(false);
+    // const [openModal, setOpenModal] = React.useState(false);
 
     const [search, setSearch] = React.useState('');
     const completedTodos = todos.filter(todo => !!todo.completed).length;
@@ -31,21 +31,28 @@ function useTodo() {
     }
     const addTodo = (text) => {
         const newTodos = [...todos];
+        const id = newTodoID(todos); 
         newTodos.push(
-            { completed: false, text: text }
+            { completed: false, text: text, id}
         );
         saveTodos(newTodos);
     }
 
-    const completeTodos = (text) => {
-        const todoIndex = todos.findIndex(todo => todo.text === text);
+    const completeTodos = (id) => {
+        const todoIndex = todos.findIndex(todo => todo.id === id);
         const newTodos = [...todos];
         newTodos[todoIndex].completed = true;
         saveTodos(newTodos);
     };
+    const editTodos = (id, newText) => {
+        const todoIndex = todos.findIndex(todo => todo.id === id);
+        const newTodos = [...todos];
+        newTodos[todoIndex].text = newText;
+        saveTodos(newTodos);
+    };
 
-    const deleteTodo = (text) => {
-        const todoIndex = todos.findIndex(todo => todo.text === text);
+    const deleteTodo = (id) => {
+        const todoIndex = todos.findIndex(todo => todo.id === id);
         const newTodos = [...todos];
         newTodos.splice(todoIndex, 1);
         saveTodos(newTodos);
@@ -62,10 +69,19 @@ function useTodo() {
         completeTodos,
         deleteTodo,
         addTodo,
-        openModal,
-        setOpenModal
+        // openModal,
+        // setOpenModal
+        editTodos,
 
     };
 }
+const newTodoID = (todosList) => {
+    if( !todosList.length){
+        return 1;
+    }
+    const idList = todosList.map(todo => todo.id);
+    const idmax = Math.max(...idList); 
+    return idmax + 1; 
+};
 
 export { useTodo };
